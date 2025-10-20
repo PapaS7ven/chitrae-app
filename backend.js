@@ -60,12 +60,12 @@ async function getDropboxAccessToken() {
 
   if (data.access_token) {
     // Update .env and process.env for runtime
-    let envFile = fs.readFileSync("DROPBOX_ACCESS_TOKEN.env", "utf8");
+    let envFile = fs.readFileSync(".env", "utf8");
     envFile = envFile.replace(
       /DROPBOX_ACCESS_TOKEN=.*/g,
       `DROPBOX_ACCESS_TOKEN=${data.access_token}`
     );
-    fs.writeFileSync("DROPBOX_ACCESS_TOKEN.env", envFile);
+    fs.writeFileSync("process.env.DROPBOX_ACCESS_TOKEN", envFile);
 
     process.env.DROPBOX_ACCESS_TOKEN = data.access_token;
 
