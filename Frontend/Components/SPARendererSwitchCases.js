@@ -24,6 +24,11 @@ export async function loadPage(page) {
 
             mainContent.innerHTML = renderMyFeed(page);
             await populateDOM(".allPosts");
+            let logoutbtn2 = document.getElementById("logoutbtn2");
+                logoutbtn2.addEventListener("click", ()=>{
+                localStorage.removeItem("authToken");
+                window.location.reload(true);
+                })
             break;
 
         case "Spotlight":

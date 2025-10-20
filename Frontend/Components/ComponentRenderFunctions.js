@@ -2,7 +2,7 @@
 export function renderMyFeed(MyGallery) {
     return `<div class="second w-full border-x-[1px] border-gray-500">
       <div class="top flex justify-center items-center border-b-[1px] border-gray-500 text-lg">              
-      <li class="flex justify-left items-center gap-2 p-1 hover:bg-[#779177] hover:cursor-pointer hover:border-0 hover:rounded-2xl absolute left-[5px] md:hidden" id="logoutbtn">
+      <li class="flex justify-left items-center gap-2 p-1 hover:bg-[#779177] hover:cursor-pointer hover:border-0 hover:rounded-2xl absolute left-[5px] md:hidden" id="logoutbtn2">
             <span class="material-symbols-outlined">logout</span><span class="hidden md:block">Logout</span>
           </li>
         <div class="center text-center p-2.5 hover:bg-[#779177] hover:cursor-pointer relative">
@@ -16,6 +16,8 @@ export function renderMyFeed(MyGallery) {
 
       </div>
     </div>`
+
+    
 };
 
 export function renderSpotlight(Spotlight){
@@ -123,7 +125,7 @@ export function renderlogin(login) {
     <div >
   <div class="apptitle place-items-center pt-[80px]"><img src="Chitrae-removebg-preview.png" alt="logo"></div>
   <div class="loginform place-items-center pt-[30px]">
-    <form id="userlogin" class="flex flex-col gap-2.5 w-[30%] justify-center p-2">
+    <form id="userlogin" class="flex flex-col gap-2.5 w-[90%] md:w-[30%] justify-center p-2">
       <label for="email">Email:</label>
       <input type="email" name="email" id="email" placeholder="Enter Your Email here!" class="border mb-[20px] h-[40px] p-1.5 hover:bg-[#779177]">
 
@@ -143,8 +145,8 @@ export function rendersignup(signup) {
   return `<div class="signup bg-[#111811] text-white w-full h-[100%] absolute z-1 ">
     <div >
   <div class="apptitle place-items-center pt-[80px]"><img src="Chitrae-removebg-preview.png" alt="logo"></div>
-  <div class="signupform place-items-center pt-[30px]">
-    <form id="usersignup" enctype="multipart/form-data" class="flex flex-col gap-2.5 w-[30%] justify-center p-2">
+  <div class="signupform place-items-center pt-[30px] pb-[80px]">
+    <form id="usersignup" enctype="multipart/form-data" class="flex flex-col gap-2.5 w-[90%] md:w-[30%] justify-center p-2">
       <label for="firstName">First Name:</label>
       <input type="text" name="firstName" id="firstName" placeholder="Enter Your First Name here!" class="border mb-[20px] h-[40px] p-1.5 hover:bg-[#779177]">
 
@@ -161,7 +163,7 @@ export function rendersignup(signup) {
       <label for="password">Password:</label>
       <input type="password" name="password" id="password" placeholder="Enter Password" class="border mb-[20px] h-[40px] p-1.5 hover:bg-[#779177]">
 
-      <label for="avatar">Select Profile Photo:<div class="place-self-center w-full md:w-[20%] m-2.5 cursor-pointer"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541" alt="avatar" class="preview border-0 rounded-full aspect-square object-cover"></div></label>
+      <label for="avatar">Select Profile Photo:<div class="place-self-center w-[30%] md:w-[20%] m-2.5 cursor-pointer"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541" alt="avatar" class="preview border-0 rounded-full aspect-square object-cover"></div></label>
       <input type="file" name="avatar" id="avatar" accept="images/*" class="hidden">
 
       <button type="submit" value="Signup" class="border hover:cursor-pointer mb-[20px] h-[40px] p-1.5 hover:bg-[#a7f7a7] bg-[#06f906] text-black">Signup</button>
