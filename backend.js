@@ -14,7 +14,7 @@ import dotenv from "dotenv";
 import { sign } from "crypto";
 import { auth } from "googleapis/build/src/apis/abusiveexperiencereport/index.js";
 import { log } from "console";
-dotenv.config({path: './JWT_SECRET_KEY.env'});
+dotenv.config();
 
 
 //We used MongoDB to connect with our database using the connection string.
