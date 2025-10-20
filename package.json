@@ -1,0 +1,30 @@
+{
+  "name": "project---twitter-clone",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watchIt": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.12",
+    "bcrypt": "^6.0.0",
+    "dayjs": "^1.11.18",
+    "dropbox": "^10.34.0",
+    "express": "^5.1.0",
+    "googleapis": "^159.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.17.2",
+    "multer": "^2.0.2",
+    "node-fetch": "^3.3.2",
+    "tailwindcss": "^4.1.12"
+  },
+  "devDependencies": {
+    "dotenv": "^17.2.2"
+  }
+}

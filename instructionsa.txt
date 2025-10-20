@@ -1,0 +1,53 @@
+1. Make a working post button - allow us to post a tweet - just text for now.
+2. Render the posted tweet on the for you feed.
+3. Create a My profile page.
+4. add authentication and signin options. 
+
+I type something in the text area -
+click on post - 
+my front end will make a post request to the backend - 
+the front end will convert this data to json and will send it to backend -
+the backend endpoint will get it and convert it back to data - 
+then the backend will save the tweet in mongodb.
+
+then my front end will make a get request to the backend -
+the backend will get the tweet from mongodb convert it to json -
+and will send it back to the frontend where it will be converted back to data and will be dynamically rendered on the feed.
+
+
+1. Add the Image upload functionality - save image on gdrive via backend and make the url public and save it on the database and serve it back to the frontend.
+2. Add Login functionality, add authentication. A user will be created and saved on database. All details of the user will be saved to database.
+3. Update the profile name, username on the Feed just like the tweet and images.
+4. Add the profile suggesstions in who to follow from the user accounts created. 
+
+
+/////////////////////
+Feedback - 
+1. Improve the allPosts.innerHTML += for performance and reducing multiple dom operations.
+2. Add Error Handling in Backend code. handle errors using try/catch.
+3. for UI/UX add a loading indicator while fetching tweets, while posting tweets and show error message is the posting fails. 
+4. Add a database indexing - add indexed on tweetId and postedOn for faster queries at scale. 
+5. Split routes into seperate files and controllers/ folder to seperate DB logic from routes.
+
+
+brand Colors - 
+#111811
+
+#779177
+
+#06f906
+
+#273a27
+
+
+
+Final Features -
+
+1- post like feature.
+2- delete post feature.
+3- refresh tokens so the dropbox token do not get expired and doesn't gets logged out againa nd again.
+4- messaging feature
+5- settings - options - edit username, first and last name, email address and password and the profile picture.
+6- mobile friendly
+
+

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chitrae - Social Media for Photographers</title>
+  <link rel="icon" href="./Chitrae.png" type="image/png">
+  <link rel="stylesheet" href="/src/output.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=all" />
+    
+  <style>
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      /* IE and Edge */
+      scrollbar-width: none;
+      /* Firefox */
+    }
+
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+      /* Chrome, Safari and Opera */
+    }
+
+    /* custom style for mobile  */
+     @media (max-width: 768px) {
+    #postSection {
+      position: fixed;
+      top: 0;
+      left: 100%;
+      width: 100%;
+      height: 100vh;
+      background-color: #111811;
+      transition: left 0.4s ease;
+      z-index: 0; /* above navbar */
+      overflow-y: auto;
+    }
+
+    #postSection.active {
+      left: 0;
+    }
+  }
+  </style>
+</head>
+
+<body class="bg-[#111811] text-white relative body">
+  <div id="appRoot"></div>
+
+  <div class="main flex md:container mx-1 md:mx-auto">
+    <div class="first md:w-fit md:px-[50px] md:relative 
+  fixed bottom-0 left-0 w-full border-t border-gray-200 bg-[#111811] md:border-none z-50">
+      <div class="sidebar py-1.5 md:py-0 md:sticky md:top-0">
+        <div class="logo hidden md:block p-7">
+          <img src="./Chitrae-removebg-preview.png" alt="logo" class="w-[300px]">
+        </div>
+        <ul class="list-none flex md:flex-col space-y-4 justify-self-center text-lg gap-[15px] md:gap-0">
+          <li
+            class="navbtn flex justify-left items-center gap-2 p-1 hover:bg-[#779177] hover:cursor-pointer hover:border-0 hover:rounded-2xl" data-page="My Gallery">
+            <span class="material-symbols-outlined">gallery_thumbnail</span><span class="hidden md:block">My Gallery</span>
+          </li>
+          <li
+            class="navbtn flex justify-left items-center gap-2 p-1 hover:bg-[#779177] hover:cursor-pointer hover:border-0 hover:rounded-2xl" data-page="Spotlight">
+            <span class="material-symbols-outlined">wb_sunny</span><span class="hidden md:block">Spotlight</span>
+          </li>
+          <li
+            class="navbtn md:flex justify-left items-center gap-2 p-1 hover:bg-[#779177] hover:cursor-pointer hover:border-0 hover:rounded-2xl hidden " data-page="Notifications">
+            <span class="material-symbols-outlined">notification_add</span><span
+              class="hidden md:block">Notifications</span>
+          </li>
+          <li
+            class="navbtn flex justify-left items-center gap-2 p-1 hover:bg-[#779177] hover:cursor-pointer hover:border-0 hover:rounded-2xl" data-page="Chatroom">
+            <span class="material-symbols-outlined">chat</span><span class="hidden md:block">Chatroom</span>
+          </li>
+
+          <li
+            id="postingpage" class="flex justify-left items-center gap-2 p-1  text-green-400 hover:bg-[#779177] hover:cursor-pointer hover:border-0 hover:rounded-2xl md:hidden">
+            <span class="material-symbols-outlined">stylus</span>
+          </li>
+          
+          <li
+            class="navbtn flex justify-left items-center gap-2 p-1 hover:bg-[#779177] hover:cursor-pointer hover:border-0 hover:rounded-2xl" data-page="Collections">
+            <span class="material-symbols-outlined">collections_bookmark</span><span class="hidden md:block">Collections</span>
+          </li>
+          <li
+            class="navbtn flex justify-left items-center gap-2 p-1 hover:bg-[#779177] hover:cursor-pointer hover:border-0 hover:rounded-2xl" data-page="Settings">
+            <span class="material-symbols-outlined">settings_input_component</span><span class="hidden md:block">Settings</span>
+          </li>
+          <li
+            class="navbtn flex justify-left items-center gap-2 p-1 hover:bg-[#779177] hover:cursor-pointer hover:border-0 hover:rounded-2xl md:hidden" data-page="My Profile">
+            <span class="material-symbols-outlined">account_box</span>
+          </li>
+          <li
+            class="hidden md:flex justify-left items-center gap-2 p-1 hover:bg-[#779177] hover:cursor-pointer hover:border-0 hover:rounded-2xl" id="logoutbtn">
+            <span class="material-symbols-outlined">logout</span><span class="hidden md:block">Logout</span>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+
+    <div id="mainContent" class=" w-full" >
+      <div class="second w-full border-x-[1px] border-gray-500">
+      <div class="top flex justify-center items-center border-b-[1px] border-gray-500 text-lg">
+        <div class="center text-center p-2.5 hover:bg-[#779177] hover:cursor-pointer relative">
+          <span>${MyProfile}</span>
+          <div class="bar h-[5px] w-[100%] bg-[#06f906] absolute left-0 border-0 rounded-3xl"></div>
+        </div>
+      </div>
+
+      <div class="allPosts h-[170vh] overflow-x-hidden overflow-y-scroll scrollbar-hide scroll-smooth">
+        <h1>Hi there</h1>
+
+      </div>
+    </div>
+    </div>
+
+    <div class="third md:block md:w-[60%] md:m-1.5" id="postSection">
+      <div class="sticky top-0">
+        <div class="search">
+          <input type="text" class="bg-[#00000063] text-white border-1 border-[#00ff00] rounded-full text-lg p-2.5 m-5 w-[90%]"
+            placeholder="Search" />
+        </div>
+
+
+        <div class="border-1 border-[#9bff9b]">
+        <div class="navbtn userProfile " data-page="My Profile">
+          <div class="flex items-center cursor-pointer p-2 hover:bg-[#779177]">
+            <div class="flex gap-3 items-center">
+              <div class="w-[14%] md:w-[18%]">
+                <img id="rightavatar" class="border-0 w-[400px] rounded-full aspect-square object-cover"
+                  src=""
+                  alt="profilepicture" />
+              </div>
+
+              <div class="md:flex flex-col">
+                <h2 class="px-1 text-lg profilename"></h2>
+                <p class="text-sm text-[#9f9c9c] username"></p>
+              </div>
+            </div>
+            <div class="hidden md:block">
+              <span class="invert"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28"
+                  color="#ffffff" fill="none">
+                  <path d="M11.9959 12H12.0049" stroke="#141B34" stroke-width="2.5" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                  <path d="M17.9998 12H18.0088" stroke="#141B34" stroke-width="2.5" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                  <path d="M5.99981 12H6.00879" stroke="#141B34" stroke-width="2.5" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                </svg></span>
+            </div>
+          </div>
+        </div>
+      <form id="postForm" enctype="multipart/form-data">
+      <div class="text-white postings">
+        <div class="whatshappening flex m-1.5 p-1.5 justify-start items-center gap-5">
+
+          <div class="thoughts w-full p-1.5 border-1">
+            <textarea name="" id="tweetbox" class="w-full outline-none" placeholder="What did you capture today??"></textarea>
+          </div>
+        </div>
+       <div class="imagePreviewdiv m-[10px] flex justify-center"><img src="" alt="preview image" id="imagePreviewshow" class="hidden w-[300px]"></div>
+        <div class="iconsnbutton flex justify-around p-1.5 m-1.5 items-center">
+          <div class="icons">
+            <ul class="flex gap-2">
+              <li>
+                <label for="imageUpload" class="hover:cursor-pointer">
+                <span
+                  class="material-symbols-outlined text-sm hover:cursor-pointer text-[#06f906] hover:text-[#9bff9b]">photo</span></label>
+                  <input type="file" name="Image" accept="images/*" id="imageUpload" class="hidden">
+              </li>
+              <li>
+                <span
+                  class="material-symbols-outlined text-sm hover:cursor-pointer text-[#06f906] hover:text-[#9bff9b]">category_search</span>
+              </li>
+              <li>
+                <span
+                  class="material-symbols-outlined text-sm hover:cursor-pointer text-[#06f906] hover:text-[#9bff9b]">tag</span>
+              </li>
+              <li>
+                <span
+                  class="material-symbols-outlined text-sm hover:cursor-pointer text-[#06f906] hover:text-[#9bff9b]">add_reaction</span>
+              </li>
+              <li>
+                <span
+                  class="material-symbols-outlined text-[#06f906] text-sm hover:cursor-pointer hover:text-[#9bff9b]">location_on</span>
+              </li>
+            </ul>
+          </div>
+          <div class="button px-5 py-1 bg-[#06f906] rounded-full font-bold hover:cursor-pointer hover:bg-[#9bff9b] text-[#273a27]">
+            <button type="submit" class="hover:cursor-pointer postbtn">Post</button>
+          </div>
+        </div>
+      </div>
+      </form>
+      </div>
+        <div class="whotoFollow justify-self-center bg-[#273a27] text-white border-0 rounded-2xl text-lg p-1 m-5 w-[80%]">
+          <h1 class="p-2 font-bold text-xl">Who to Follow</h1>
+<div class="people">
+
+          </div>
+          <div
+            class="navbtn show flex w-fit p-2 hover:underline font-light text-sm text-[#06f906] hover:cursor-pointer hover:text-[#06f906]"  data-page="Discover People">
+            Show More
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/dayjs/dayjs.min.js"></script>
+  <script src="https://unpkg.com/dayjs/plugin/relativeTime.js"></script>
+  <script type="module" src="./Components/ComponentRenderFunctions.js"></script>
+  <script type="module" src="./Components/SPARendererSwitchCases.js"></script>
+  <script type="module" src="/frontend.js"></script>
+</body>
+
+</html>
