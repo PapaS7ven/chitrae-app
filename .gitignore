@@ -1,6 +1,5 @@
 node_modules
 .env
-DROPBOX_ACCESS_TOKEN.env
 JWT_SECRET_KEY.env
 uploads
 Chitrae-App.docx
