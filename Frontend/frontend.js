@@ -90,8 +90,9 @@ let logoutbtn = document.getElementById("logoutbtn");
 
 //Function to record the timestamp for our posted tweet so we can keep the postedon time in the db.
 function recordTimeStamp() {
-  const now = new Date();
-  const readableTime = now.toLocaleString();
+  // const now = new Date();
+  // const readableTime = now.toLocaleString();
+  const readableTime = new Date().toISOString();
   return readableTime;
 }
 
