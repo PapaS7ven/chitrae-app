@@ -2,12 +2,15 @@ import { loadPage } from "./SPARendererSwitchCases.js";
 import { renderMyFeed } from "./ComponentRenderFunctions.js";
 import { populateDOM } from "./PopulateDOM.js";
 import { updateusername } from "./usernameupdatehelper.js";
+import { showLoading } from "../frontend.js";
+import { hideLoading } from "../frontend.js";
 
 export function userSignupLogic() {
     const usersignupform = document.getElementById("usersignup");
     if (!usersignupform) return; //safeguard
     
     usersignupform.addEventListener("submit", async (e) =>{
+        showLoading();
         e.preventDefault();
                 let file = document.getElementById("avatar").files[0];
                 let imgurl;
@@ -39,6 +42,7 @@ export function userSignupLogic() {
         })
 
         const data = await res.json();
+        hideLoading();
         if(data.success){
             alert("Account successfully created, you may login now...")
             loadPage("login");
