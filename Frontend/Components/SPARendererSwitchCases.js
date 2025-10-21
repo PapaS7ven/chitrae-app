@@ -13,6 +13,8 @@ import { populateMyProfile } from "./PopulateDOM.js";
 import { populateDOM } from "./PopulateDOM.js";
 import { populateDiscoverPeople } from "./PopulateDOM.js";
 import { populateSpotlight } from "./PopulateDOM.js";
+import { showLoading } from "../frontend.js";
+import { hideLoading } from "../frontend.js";
 
 export async function loadPage(page) {
     const mainContent = document.getElementById("mainContent");
@@ -23,7 +25,9 @@ export async function loadPage(page) {
         case "My Gallery":
 
             mainContent.innerHTML = renderMyFeed(page);
+            showLoading();
             await populateDOM(".allPosts");
+            hideLoading();
             let logoutbtn2 = document.getElementById("logoutbtn2");
                 logoutbtn2.addEventListener("click", ()=>{
                 localStorage.removeItem("authToken");
@@ -33,7 +37,9 @@ export async function loadPage(page) {
 
         case "Spotlight":
             mainContent.innerHTML = renderSpotlight(page);
+            showLoading();
             await populateSpotlight(".allPosts");
+            hideLoading();
             break;
 
         case "Notifications":
@@ -55,13 +61,17 @@ export async function loadPage(page) {
 
         case "My Profile":
                 mainContent.innerHTML = renderMyProfile(page);
+                showLoading();
                 await populateMyProfile(".allPosts")
+                hideLoading();
                 break;
 
         case "login":
 
                 appRoot.innerHTML = renderlogin(page);
+                showLoading();
                 userloginlogic()
+                hideLoading();
                 break;
 
         case "signup":
@@ -77,12 +87,16 @@ export async function loadPage(page) {
                         imgSignupPreview.src = newsrc;
                             }
                         })
+                showLoading();
                 userSignupLogic();
+                hideLoading();
                 break;
     
         case "Discover People":
             mainContent.innerHTML = renderDiscoverPeople(page);
+            showLoading();
             await populateDiscoverPeople(".wrapper")
+            hideLoading();
             break;
 
         default:

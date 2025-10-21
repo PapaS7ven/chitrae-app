@@ -6,8 +6,21 @@ import { followUnfollowFnc } from "./Components/usernameupdatehelper.js";
 
 console.log("Interactivity starts here!!!");
 
+//loading animation
+const loadingOverlay = document.getElementById("loading-overlay");
+
+ export function showLoading() {
+  loadingOverlay.classList.remove("hidden");
+}
+
+export function hideLoading() {
+  loadingOverlay.classList.add("hidden");
+}
+
+
  //Default feed on page load.
 document.addEventListener("DOMContentLoaded", async() => {
+  showLoading()
   const token = localStorage.getItem("authToken");
   if (token) {
     //verify token with backend
@@ -36,6 +49,7 @@ document.addEventListener("DOMContentLoaded", async() => {
   else{
     loadPage("login");
   }
+  hideLoading();
 });
 
 //adding a event listner to navigate the page.
@@ -153,6 +167,7 @@ async function whotofollow() {
 
 //Added an event listener to our Post Button so we can post a tweet and save it in our database and later access it to populate our feed.
 postForm.addEventListener("submit", async(e) => {
+  showLoading();
     e.preventDefault()
     //We'll get the shareable link for our image from dropbox
     let file = document.getElementById("imageUpload").files[0];
@@ -202,6 +217,7 @@ postForm.addEventListener("submit", async(e) => {
   
     tweetbox.value = "";
      };
+     hideLoading();
 })
 
 
