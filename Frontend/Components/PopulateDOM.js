@@ -48,13 +48,13 @@ async function getSpotlightPosts() {
       console.log(tweetcon);
 
     let htmlContent = `<div class="mainpost border-b-[1px] p-2.5 flex md:gap-5 gap-2">
-          <div class="profiles md:w-[12%] w-[10%]">
+          <div class="profiles md:w-[12%] md:h-[12%] w-[10%] h-[10%] flex">
             <img class="border-0 rounded-full aspect-square object-cover hover:cursor-pointer"
               src="${avatar}" alt="Rainmaker1973" />
           </div>
 
           <div class="posts md:w-[100%] w-[90%]">
-            <div class="header flex justify-start items-center gap-2.5">
+            <div class="header flex justify-start items-center gap-2.5 text-xs md:text-sm">
               <h3 class="profileName">${firstName} ${lastName}</h3>
               <p class="handle text-sm text-gray-500 hover:cursor-pointer">
                 @${userName}
@@ -63,7 +63,7 @@ async function getSpotlightPosts() {
                 <li>${dayjs(tweetdate).fromNow()}</li>
               </ul>
             </div>
-            <div class="text">
+            <div class="text pt-2.5 pb-2.5">
               <p>
                 ${tweetcon}
               </p>

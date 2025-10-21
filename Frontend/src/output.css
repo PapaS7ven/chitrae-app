@@ -278,6 +278,9 @@
   .h-\[5px\] {
     height: 5px;
   }
+  .h-\[10\%\] {
+    height: 10%;
+  }
   .h-\[25vh\] {
     height: 25vh;
   }
@@ -587,11 +590,23 @@
   .py-\[7px\] {
     padding-block: 7px;
   }
+  .pt-2 {
+    padding-top: calc(var(--spacing) * 2);
+  }
+  .pt-2\.5 {
+    padding-top: calc(var(--spacing) * 2.5);
+  }
   .pt-\[30px\] {
     padding-top: 30px;
   }
   .pt-\[80px\] {
     padding-top: 80px;
+  }
+  .pb-2 {
+    padding-bottom: calc(var(--spacing) * 2);
+  }
+  .pb-2\.5 {
+    padding-bottom: calc(var(--spacing) * 2.5);
   }
   .pb-\[80px\] {
     padding-bottom: 80px;
@@ -814,6 +829,11 @@
       display: none;
     }
   }
+  .md\:h-\[12\%\] {
+    @media (width >= 48rem) {
+      height: 12%;
+    }
+  }
   .md\:h-\[27vh\] {
     @media (width >= 48rem) {
       height: 27vh;
@@ -898,6 +918,12 @@
   .md\:pb-0 {
     @media (width >= 48rem) {
       padding-bottom: calc(var(--spacing) * 0);
+    }
+  }
+  .md\:text-sm {
+    @media (width >= 48rem) {
+      font-size: var(--text-sm);
+      line-height: var(--tw-leading, var(--text-sm--line-height));
     }
   }
 }

@@ -17,6 +17,17 @@ export function hideLoading() {
   loadingOverlay.classList.add("hidden");
 }
 
+//Toggling the sidebar on mobile so that when we are on authentication page it hides the nav bar.
+export function toggleSidebar(){
+  const sidebar = document.querySelector(".sidebar");
+
+  if(!sidebar) return;
+
+  const onAuthPage = document.querySelector(".login") || document.querySelector(".signup");
+
+  sidebar.classList.toggle("hidden", !!onAuthPage);
+}
+
 
  //Default feed on page load.
 document.addEventListener("DOMContentLoaded", async() => {

@@ -15,6 +15,7 @@ import { populateDiscoverPeople } from "./PopulateDOM.js";
 import { populateSpotlight } from "./PopulateDOM.js";
 import { showLoading } from "../frontend.js";
 import { hideLoading } from "../frontend.js";
+import { toggleSidebar } from "../frontend.js";
 
 export async function loadPage(page) {
     const mainContent = document.getElementById("mainContent");
@@ -69,6 +70,7 @@ export async function loadPage(page) {
         case "login":
 
                 appRoot.innerHTML = renderlogin(page);
+                toggleSidebar();
                 showLoading();
                 userloginlogic()
                 hideLoading();
@@ -77,6 +79,7 @@ export async function loadPage(page) {
         case "signup":
 
                 appRoot.innerHTML = rendersignup(page);
+                toggleSidebar();
                 let avatar = document.getElementById("avatar");
                 let imgSignupPreview = document.querySelector(".preview");
                 avatar.addEventListener("change", (e) =>{
