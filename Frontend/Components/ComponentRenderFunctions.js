@@ -164,7 +164,7 @@ export function rendersignup(signup) {
       <input type="password" name="password" id="password" placeholder="Enter Password" class="border mb-[20px] h-[40px] p-1.5 hover:bg-[#779177]">
 
       <label for="avatar">Select Profile Photo:<div class="place-self-center w-[30%] md:w-[20%] m-2.5 cursor-pointer"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541" alt="avatar" class="preview border-0 rounded-full aspect-square object-cover"></div></label>
-      <input type="file" name="avatar" id="avatar" accept="images/*" class="hidden">
+      <input type="file" name="avatar" id="avatar" accept="image/*" class="hidden">
 
       <button type="submit" value="Signup" class="border hover:cursor-pointer mb-[20px] h-[40px] p-1.5 hover:bg-[#a7f7a7] bg-[#06f906] text-black">Signup</button>
     </form>
