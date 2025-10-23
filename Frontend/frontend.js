@@ -17,6 +17,25 @@ export function hideLoading() {
   loadingOverlay.classList.add("hidden");
 }
 
+//Function to convert heic images to jpg
+export async function heictoJpg(imgfile) {
+  let imageblob;
+  const uniqueName = `photo_${Date.now()}.jpeg`;
+  const heicfile = imgfile[0];
+  if (heicfile && heicfile.type === "image/heic" || heicfile.name?.endsWith(".heic")) {
+    const conversionResult = await heic2any({
+      blob: heicfile,
+      toType: 'image/jpeg'});
+    
+    imageblob = new File([conversionResult], uniqueName, {type: "image/jpeg"}); 
+
+    return imageblob;
+  }
+
+  imageblob = new File([heicfile], uniqueName, {type: "image/jpeg"});
+  return imageblob;
+}
+
 //Toggling the sidebar on mobile so that when we are on authentication page it hides the nav bar.
 export function toggleSidebar(){
   const sidebar = document.querySelector(".sidebar");
@@ -93,16 +112,27 @@ let tweetObj = {};
 let postForm = document.getElementById("postForm");
 let tweetbox = document.getElementById("tweetbox");
 
+//Image preview function to preview the image being posted before actually posting it.
 let imgPreview = document.getElementById("imageUpload");
-imgPreview.addEventListener("change", (e) => {
-  const currFile = e.target.files
-  if (currFile.length > 0) {
-    let src = URL.createObjectURL(currFile[0]);
+imgPreview.addEventListener("change", async (e) => {
+  const currFile = e.target.files;
+  console.log(currFile);
+    const updatedFile = await heictoJpg(currFile);
+   console.log(updatedFile);
+    
+    let src = URL.createObjectURL(updatedFile);
     let imagePreviewshow = document.getElementById("imagePreviewshow");
     imagePreviewshow.src = src;
-    imagePreviewshow.style.display = "block";
-  }
-})
+    imagePreviewshow.style.display = "block";});
+
+//   if (updatedFile.length > 0) {
+             
+//     let src = URL.createObjectURL(currFile[0]);
+//     let imagePreviewshow = document.getElementById("imagePreviewshow");
+//     imagePreviewshow.src = src;
+//     imagePreviewshow.style.display = "block";
+//   }
+// })
 
 
 
@@ -181,7 +211,8 @@ postForm.addEventListener("submit", async(e) => {
   showLoading();
     e.preventDefault()
     //We'll get the shareable link for our image from dropbox
-    let file = document.getElementById("imageUpload").files[0];
+    let orgfile = document.getElementById("imageUpload").files;
+    let file = await heictoJpg(orgfile);
 
     if(file){
       const formData = new FormData();

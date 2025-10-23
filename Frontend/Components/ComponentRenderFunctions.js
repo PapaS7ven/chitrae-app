@@ -186,8 +186,8 @@ export function renderDiscoverPeople(discoverpeople) {
       </div>
 
       <div class="allPosts h-[170vh] overflow-x-hidden overflow-y-scroll scrollbar-hide scroll-smooth">
-      <div class="discoverbody bg-[#273a27] text-white">
-      <div class="wrapper grid grid-cols-4 gap-2.5 p-1.5"></div>
+      <div class="discoverbody text-white">
+      <div class="wrapper flex flex-col md:grid md:grid-cols-4 gap-2.5 p-1.5"></div>
       </div>            
 
       </div>

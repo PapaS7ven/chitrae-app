@@ -273,8 +273,8 @@ export async function populateDiscoverPeople(containerselector) {
   const conatinerClass = document.querySelector(containerselector);
 
   users.forEach(user => {
-      let htmlContent = `<div class="followCard w-[12rem] hover:bg-[#779177] flex flex-col gap-1.5 justify-center place-items-center p-2.5 rounded-2xl">
-  <div class="image w-[8rem]"><img src="${user.userProfilePicture}" alt="avatar" class="border-0 rounded-full aspect-square object-cover"></div>
+      let htmlContent = `<div class="followCard w-full bg-black md:w-[12rem] hover:bg-[#779177] flex md:flex-col gap-1.5 justify-between md:justify-center items-center md:place-items-center p-2.5 rounded-2xl">
+  <div class="image w-[5rem] md:w-[8rem]"><img src="${user.userProfilePicture}" alt="avatar" class="border-0 rounded-full aspect-square object-cover"></div>
   <div class="flex flex-col">
     <h2 class="px-1 text-lg">${user.userFirstName} ${user.userLastName}</h2>
     <p class="text-sm text-[#ffffff]">@${user.userName}</p>

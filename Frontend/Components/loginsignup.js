@@ -4,6 +4,7 @@ import { populateDOM } from "./PopulateDOM.js";
 import { updateusername } from "./usernameupdatehelper.js";
 import { showLoading } from "../frontend.js";
 import { hideLoading } from "../frontend.js";
+import { heictoJpg } from "../frontend.js";
 
 export function userSignupLogic() {
     const usersignupform = document.getElementById("usersignup");
@@ -12,7 +13,9 @@ export function userSignupLogic() {
     usersignupform.addEventListener("submit", async (e) =>{
         showLoading();
         e.preventDefault();
-                let file = document.getElementById("avatar").files[0];
+                let orgfile = document.getElementById("avatar").files;
+                let file = await heictoJpg(orgfile);
+
                 let imgurl;
     if(file){
       const formData = new FormData();
