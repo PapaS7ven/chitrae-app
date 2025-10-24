@@ -179,7 +179,7 @@ async function whotofollow() {
   
     users.forEach(user => {
       let peoplesectionhtml = `<div class="follow flex justify-between items-center cursor-default p-2.5 hover:bg-[#779177]">
-              <div class="flex gap-3">
+              <div class="flex gap-3 items-center">
                 <div class="w-[15%]">
                   <img class="border-0 rounded-full aspect-square object-cover"
                     src="${user.userProfilePicture}"

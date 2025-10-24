@@ -11,7 +11,7 @@ export function renderMyFeed(MyGallery) {
         </div>
       </div>
 
-      <div class="allPosts h-[170vh] overflow-x-hidden overflow-y-scroll scrollbar-hide scroll-smooth">
+      <div class="allPosts md:h-full md:overflow-x-hidden md:overflow-y-scroll scrollbar-hide scroll-smooth pb-[3.5rem] md:pb-0">
 
 
       </div>
@@ -29,7 +29,7 @@ export function renderSpotlight(Spotlight){
         </div>
       </div>
 
-      <div class="allPosts h-[170vh] overflow-x-hidden overflow-y-scroll scrollbar-hide scroll-smooth">
+      <div class="allPosts md:h-full md:overflow-x-hidden md:overflow-y-scroll scrollbar-hide scroll-smooth pb-[3.5rem] md:pb-0">
 
 
       </div>
@@ -105,7 +105,7 @@ export function renderSettings(Settings) {
 
 
 export function renderMyProfile(MyProfile) {
-  return `<div class="second w-full border-x-[1px] border-gray-500">
+  return `<div class="second w-full">
       <div class="top flex justify-center items-center border-b-[1px] border-gray-500 text-lg">
         <div class="center text-center p-2.5 hover:bg-[#779177] hover:cursor-pointer relative">
           <span>${MyProfile}</span>
@@ -113,7 +113,7 @@ export function renderMyProfile(MyProfile) {
         </div>
       </div>
 
-      <div class="allPosts h-[170vh] overflow-x-hidden overflow-y-scroll scrollbar-hide scroll-smooth">
+      <div class="allPosts md:h-full md:overflow-x-hidden md:overflow-y-scroll scrollbar-hide scroll-smooth pb-[3.5rem] md:pb-0">
 
               
       </div>
@@ -177,7 +177,7 @@ export function rendersignup(signup) {
 }
 
 export function renderDiscoverPeople(discoverpeople) {
-  return `<div class="second w-full border-x-[1px] border-gray-500">
+  return `<div class="second w-full">
       <div class="top flex justify-center items-center border-b-[1px] border-gray-500 text-lg">
         <div class="center text-center p-2.5 hover:bg-[#779177] hover:cursor-pointer relative">
           <span>${discoverpeople}</span>
@@ -185,7 +185,7 @@ export function renderDiscoverPeople(discoverpeople) {
         </div>
       </div>
 
-      <div class="allPosts h-[170vh] overflow-x-hidden overflow-y-scroll scrollbar-hide scroll-smooth">
+      <div class="allPosts md:h-full md:overflow-x-hidden md:overflow-y-scroll scrollbar-hide scroll-smooth pb-[3.5rem] md:pb-0">
       <div class="discoverbody text-white">
       <div class="wrapper flex flex-col md:grid md:grid-cols-4 gap-2.5 p-1.5"></div>
       </div>            
